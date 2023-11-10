@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Place Suggestion Chatbot</title>
+</head>
+<body>
+    <h1>Tourist Place Suggestion Chatbot</h1>
+
+    <script>
+        function suggestPlace(country) {
+            country = country.toLowerCase();
+          
+
+            if (country === 'india') {
+                return "How about visiting the Taj Mahal in Agra or the beautiful beaches in Goa?";
+
+            }
+             else if (country === 'japan') {
+                return "Explore the historic temples in Kyoto and the bustling city of Tokyo.";
+            } else if (country === 'italy') {
+                return "Visit the iconic Colosseum in Rome and enjoy the art in Florence.";
+            } else {
+                return "I'm sorry, I don't have suggestions for that country. Please try another one.";
+            }
+        }
+
+        function askBot() {
+            const userInput = prompt("Which country are you interested in?");
+            
+            if (userInput === null) {
+                alert("Chatbot: You canceled the input. Please try again.");
+            } else if (userInput.trim() === "") {
+                alert("Chatbot: You didn't provide a country. Please try again.");
+            } else {
+                const botResponse = suggestPlace(userInput);
+                alert("Chatbot: " + botResponse);
+            }
+        }
+
+        // Call askBot on page load or in response to a button click
+        document.addEventListener('DOMContentLoaded', function() {
+            askBot();
+        });
+    </script>
+</body>
+</html>
